@@ -27,7 +27,8 @@ sudo dpkg -i ./docker-binaries/containerd.io_1.5.10-1_amd64.deb \
   ./docker-binaries/docker-buildx-plugin_0.10.2-1~ubuntu.22.04~jammy_amd64.deb \
   ./docker-binaries/docker-compose-plugin_2.3.3~ubuntu-jammy_amd64.deb
 
-sudo groupadd docker
+
+sudo getent group docker || groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 
