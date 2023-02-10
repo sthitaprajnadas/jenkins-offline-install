@@ -13,11 +13,13 @@ echo "starting docker offline install"
 distro=`lsb_release -i |cut -f2`
 version=`lsb_release -r |cut -f2`
 
-if [ "$distro" != "Ubuntu" && "$version" == "v22.04"]; then
+if [ "$distro" != "Ubuntu" ] && [ "$version" == "22.04" ]; then
     echo "Current system is $distro $version"
     echo "OS not Ubuntuv22.04.Exiting......!"
     exit 1
 fi
+
+echo "Current OS good to proceed!"
 
 sudo dpkg -i ./docker-binaries/containerd.io_1.5.10-1_amd64.deb \
   ./docker-binaries/docker-ce_20.10.13~3-0~ubuntu-jammy_amd64.deb \
