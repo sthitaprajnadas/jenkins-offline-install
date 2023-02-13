@@ -35,5 +35,4 @@ newgrp docker
 sudo service docker start
 
 echo "$(docker version)"
-
 echo "Docker install success!"
